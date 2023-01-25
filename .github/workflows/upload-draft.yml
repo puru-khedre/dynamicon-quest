@@ -19,4 +19,4 @@ jobs:
         uses: trywilco/uploadQuestAction@main
         with:
           quest-editor-user-token: ${{ secrets.QUESTS_EDITOR_TOKEN }}
-          quest-editor-user-email: your@email.address
+          quest-editor-user-email: purushottamkhedre123@gmail.com
