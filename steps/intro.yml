@@ -1,9 +1,6 @@
 id: intro_dynamicon_smith
 learningObjectives:
-  - Creating and using utility functions
-  - use of Javascript's canvas API, and converting canvas into data URL
-hints:
-  - Try to find what all the users that drop in the funnel have in common
+
 startFlow:
   do:
     - actionId: bot_message
@@ -18,32 +15,4 @@ startFlow:
             delay: 4000
           - text: "Are you ready to dive into the complexities, let me know when you're ready."
             delay: 2000
-trigger:
-  type: user_message
-  params:
-    person: keen
-  flowNode:
-    if:
-      conditions:
-        - conditionId: text_match_regex
-          params:
-            text: "${userMessageText}"
-            regex: mobile|android|ios|iphobe|non web
-            flags: i
-      then:
-        do:
-          - actionId: bot_message
-            params:
-              person: keen
-              messages:
-                - text: Good catch! I'll let the support team know.
-                  delay: 1300
-          - actionId: finish_step
-      else:
-        do:
-          - actionId: bot_message
-            params:
-              person: keen
-              messages:
-                - text: Try again! I'm sure you'll figure this out.
-                  delay: 2500
+    - actionId: finish_step
