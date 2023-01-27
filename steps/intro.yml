@@ -15,4 +15,15 @@ startFlow:
             delay: 4000
           - text: "Are you ready to dive into the complexities, let me know when you're ready."
             delay: 2000
-    - actionId: finish_step
+
+trigger:
+  type: user_message
+  params:
+    person: lucca
+  flowNode:
+    if:
+      conditions:
+        - conditionId: is_user_message_text_ready_to_continue
+      then:
+        do:
+          - actionId: finish_step
