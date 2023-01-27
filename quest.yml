@@ -4,7 +4,8 @@ description: "Join the DynamIcon Smith's adventure! As a new member of Anythink 
 summary: "Congratulations on completing the DynamIcon Smith quest! You've successfully added a unique feature to the Anythink website, where new users can now have their own avatar generated and saved in the database. You've learned how to create and use utility functions, make dynamic changes to a canvas, and send data from the front-end to the back-end. Keep up the good work and get ready for more challenges ahead!"
 level: intermediate
 steps:
-- create_utility_function
+- intro_dynamicon_smith
+- create_utility_function_dynamicon_smith
 - funneldrop_reproduce_locally
 - funneldrop_fixing_bug_pr
 duration: 1.0

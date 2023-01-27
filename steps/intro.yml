@@ -1,4 +1,4 @@
-id: create_utility_function_dynamicon_smith
+id: intro_dynamicon_smith
 learningObjectives:
   - Creating and using utility functions
   - use of Javascript's canvas API, and converting canvas into data URL
