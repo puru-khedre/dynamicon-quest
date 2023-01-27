@@ -1,4 +1,4 @@
-id: create_utility_function_dynamicon_smith
+id: create_utils_dir_dynamicon_smith
 learningObjectives:
   - Creating and using utility functions
   - use of Javascript's canvas API, and converting canvas into data URL
@@ -27,17 +27,7 @@ trigger:
         - conditionId: is_user_message_text_ready_to_continue
       then:
         do:
-          - actionId: bot_message
-            params:
-              person: keen
-              messages:
-                - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used. Make sure the name of the file is getUserAvatar.js."
-                  delay: 2500
-                - text: "Make sure the name of the file is getUserAvatar.js."
-                  delay: 800
-                - text: "Remember that the function should return base64 data URL. When you're done with that, open a PR."
-                  delay: 2500
-          - actionId: finish_step
+          - finish_step
       else:
         do:
           - actionId: bot_message
@@ -46,3 +36,4 @@ trigger:
               messages:
                 - text: "I don't understand what you are saying."
                   delay: 400
+

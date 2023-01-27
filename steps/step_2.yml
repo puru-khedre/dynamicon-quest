@@ -1,0 +1,64 @@
+id: create_utility_function_dynamicon_smith
+learningObjectives:
+  - Creating and using utility functions
+  - use of Javascript's canvas API, and converting canvas into data URL
+hints:
+  - Try to find what all the users that drop in the funnel have in common
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: keen
+        messages:
+          - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used. Make sure the name of the file is getUserAvatar.js."
+            delay: 2500
+          - text: "Make sure the name of the file is getUserAvatar.js."
+            delay: 800
+          - text: "Remember that the function should return base64 data URL. When you're done with that, open a PR."
+            delay: 2500
+
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    switch:
+      key: "${eventType}"
+      cases:
+        github_pr_opened:
+          do:
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                messages:
+                  - text: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+                    delay: 2000
+        github_pr_workflow_complete_success:
+          do:
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Great job! Your can merge PR"
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                messages:
+                  - text: "Great job! Your can merge PR"
+                    delay: 400
+        github_pr_workflow_complete_failure:
+          do:
+
+        github_pr_merged:
+          do:
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Oh no, it looks like your code is failing some tests."
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                messages:
+                  - text: "Oh no, it looks like your code is failing some tests."
+                    delay: 1200

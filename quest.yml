@@ -5,6 +5,7 @@ summary: "Congratulations on completing the DynamIcon Smith quest! You've succes
 level: intermediate
 steps:
 - intro_dynamicon_smith
+- create_utils_dir_dynamicon_smith
 - create_utility_function_dynamicon_smith
 - funneldrop_reproduce_locally
 - funneldrop_fixing_bug_pr
