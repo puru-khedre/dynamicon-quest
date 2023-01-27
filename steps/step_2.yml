@@ -35,6 +35,21 @@ trigger:
                 messages:
                   - text: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
                     delay: 2000
+          if:
+            conditions:
+            - conditionId: github_is_file_added
+              params:
+                fileName: frontend/src/utils/getUserAvatar
+            then:
+              do:
+                - actionId: github_pr_approve
+            else:
+              do:
+                - actionId: github_pr_reject
+                  params: 
+                    person: lucca
+                    message: "Oh no, it looks like your code is failing some tests."
+
         github_pr_workflow_complete_success:
           do:
             - actionId: github_pr_comment
@@ -47,21 +62,6 @@ trigger:
                 messages:
                   - text: "Great job! Your can merge PR"
                     delay: 400
-          if:
-            conditions:
-            - conditionId: github_is_file_added
-              params:
-                fileName: frontend/src/utils/getUserAvatar
-          then:
-            do:
-              - actionId: github_pr_approve
-          else:
-            do:
-              - actionId: github_pr_reject
-                params: 
-                  person: lucca
-                  message: "Oh no, it looks like your code is failing some tests."
-
         github_pr_workflow_complete_failure:
           do:
             - actionId: bot_message
