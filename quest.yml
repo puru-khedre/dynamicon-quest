@@ -1,17 +1,16 @@
-id: puru_test2
-title: Funnel Drop
-description: "What’s worse than a bug? A bug that happens in the production environment! \nIt affects real users, who often have pitchforks and torches and would not hesitate to use them on you. Time to learn how to handle such bugs—from getting a support ticket, through bug replication, to making sure it can’t bug (ha!) anyone ever again."
-summary: "Welcome to real life - where a commit on one side of the world affects users on the other side. Most of the problems you’ll encounter won’t be as straightforward, and we’ll first need to dive into the data to analyze what exactly the problem is.\n\nFinding needles in haystacks is a crucial part of every engineer's work. No two bugs are the same, but the process by which they’re eliminated often begins with cutting and slicing data until we isolate the exact problem. Then we need to reproduce it locally as it’s the only way to know that we are fixing the problem. Finally, it’s time to fix the problem and deploy it to production. \n\nThe reproduction, by the way, can be a challenge in itself, as developing on a desktop with a stable and fast internet connection will give you the experience of a certain subset of your users. Others might use the product on a different type of device or with very limited bandwidth— circumstances that can expose bugs. Luckily, we have enough tools that let us mimic different users."
+id: dynamIcon_smith
+title: DynamIcon Smith
+description: "Join the DynamIcon Smith's adventure! As a new member of Anythink team, you will develop an innovative feature that will shake up the e-commerce industry. \nYour mission, is to create a dynamic avatar for new sign-ups. This avatar will be generated based on the user and will be as unique as the user themselves. \nBut beware, this quest won't be easy. But fear not, With the help of a trusty guide, you'll be able to conquer this challenge in no time."
+summary: "Congratulations on completing the DynamIcon Smith quest! You've successfully added a unique feature to the Anythink website, where new users can now have their own avatar generated and saved in the database. You've learned how to create and use utility functions, make dynamic changes to a canvas, and send data from the front-end to the back-end. Keep up the good work and get ready for more challenges ahead!"
 level: beginner
 steps:
 - funneldrop_analyze_data
 - funneldrop_reproduce_locally
 - funneldrop_fixing_bug_pr
-duration: 1.5
+duration: 1.0
 skills:
 - frontend
-- debugging
-- observability
+- backend
 - communication
 questDependency: docker_localsetup
-slogan: It's time for...
+slogan: Elevating user identity through dynamic avatars
