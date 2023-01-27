@@ -40,7 +40,7 @@ trigger:
             conditions:
             - conditionId: github_is_file_added
               params:
-                fileName: frontend/src/utils/getUserAvatar
+                fileName: frontend/src/utils/getUserAvatar.js
             then:
               do:
                 - actionId: github_pr_approve
