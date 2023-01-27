@@ -10,14 +10,11 @@ startFlow:
       params:
         person: lucca
         messages:
-          - text: "Hey ${user.firstName}!"
-            delay: 300
-          - text: "So, we've got a new feature we want to implement on our website. We want to automatically create a unique image for each new user based on their information"
-            delay: 4500
-          - text: "Now, I know you're probably thinking \"But Lucca, I'm not a designer!\" Don't worry, we'll be using code to generate these images."
-            delay: 4000
-          - text: "Are you ready to dive into the complexities, let me know when you're ready."
+          - text: "First things first, let's create a utility function that takes in the user's information and generates a dataURL of the image."
+            delay: 2500
+          - text: "To create an image, we use HTML canvas. You can read more about (canvas here)[https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API]."
             delay: 2000
+
 trigger:
   type: user_message
   params:
