@@ -14,33 +14,35 @@ startFlow:
             delay: 2500
           - text: "To create an image, we use HTML canvas. You can read more about [canvas here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)."
             delay: 2000
+          - text: "When you're ready let me know."
+            delay: 700
 
 trigger:
   type: user_message
   params:
-    person: keen
+    person: lucca
   flowNode:
     if:
       conditions:
-        - conditionId: text_match_regex
-          params:
-            text: "${userMessageText}"
-            regex: mobile|android|ios|iphobe|non web
-            flags: i
+        - conditionId: is_user_message_text_ready_to_continue
       then:
         do:
           - actionId: bot_message
             params:
               person: keen
               messages:
-                - text: Good catch! I'll let the support team know.
-                  delay: 1300
+                - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used. Make sure the name of the file is getUserAvatar.js."
+                  delay: 2500
+                - text: "Make sure the name of the file is getUserAvatar.js."
+                  delay: 800
+                - text: "Remember that the function should return base64 data URL. When you're done with that, open a PR."
+                  delay: 2500
           - actionId: finish_step
       else:
         do:
           - actionId: bot_message
             params:
-              person: keen
+              person: lucca
               messages:
-                - text: Try again! I'm sure you'll figure this out.
-                  delay: 2500
+                - text: "I don't understand what you are saying."
+                  delay: 400
