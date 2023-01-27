@@ -1,6 +1,5 @@
 id: intro_dynamicon_smith
 learningObjectives:
-
 startFlow:
   do:
     - actionId: bot_message
@@ -27,3 +26,11 @@ trigger:
       then:
         do:
           - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: "let me know when you're ready. By typing ready | done"
+                  delay: 200
