@@ -49,9 +49,6 @@ trigger:
                     delay: 400
         github_pr_workflow_complete_failure:
           do:
-
-        github_pr_merged:
-          do:
             - actionId: github_pr_comment
               params:
                 person: lucca
@@ -62,3 +59,6 @@ trigger:
                 messages:
                   - text: "Oh no, it looks like your code is failing some tests."
                     delay: 1200
+        github_pr_merged:
+          do:
+            - actionId: finish_step
