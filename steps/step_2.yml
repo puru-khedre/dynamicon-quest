@@ -8,10 +8,10 @@ startFlow:
   do:
     - actionId: bot_message
       params:
-        person: keen
+        person: lucca
         messages:
-          - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used. Make sure the name of the file is getUserAvatar.js."
-            delay: 2500
+          - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used."
+            delay: 3000
           - text: "Make sure the name of the file is getUserAvatar.js."
             delay: 800
           - text: "Remember that the function should return base64 data URL. When you're done with that, open a PR."
