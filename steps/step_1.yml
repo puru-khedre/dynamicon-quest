@@ -27,7 +27,7 @@ trigger:
         - conditionId: is_user_message_text_ready_to_continue
       then:
         do:
-          - finish_step
+          - actionId: finish_step
       else:
         do:
           - actionId: bot_message
