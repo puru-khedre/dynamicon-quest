@@ -2,7 +2,7 @@
 
 ## Quest Details
 
-#### title: Spawn dynamIcon
+#### title: DynamIcon Smith
 
 #### level: beginner
 
