@@ -24,18 +24,6 @@ trigger:
       key: "${eventType}"
       cases:
         github_pr_opened:
-          if:
-            conditions:
-            - conditionId: github_is_file_added
-              params:
-                fileName: frontend/src/utils/getUserAvatar.js
-              equals: false
-            then:
-              do:
-                - actionId: github_pr_reject
-                  params: 
-                    person: lucca
-                    message: "Oh no, it looks like your code is failing some tests."
           do:
             - actionId: github_pr_comment
               params:
@@ -46,21 +34,32 @@ trigger:
                 person: lucca
                 messages:
                   - text: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
-                    delay: 2000    
-
+                    delay: 2000
         github_pr_workflow_complete_success:
-          do:
-            - actionId: github_pr_comment
+          if:
+            conditions:
+            - conditionId: github_is_file_added
               params:
-                person: lucca
-                message: "Great job! Your can merge PR"
-            - actionId: bot_message
-              params:
-                person: lucca
-                messages:
-                  - text: "Great job! Your can merge PR"
-                    delay: 400
-            - actionId: github_pr_approve
+                fileName: frontend/src/utils/getUserAvatar
+            then:
+              do:
+                - actionId: github_pr_approve
+                - actionId: github_pr_comment
+                  params:
+                    person: lucca
+                    message: "Great job! Your can merge PR"
+                - actionId: bot_message
+                  params:
+                    person: lucca
+                    messages:
+                      - text: "Great job! Your can merge PR"
+                        delay: 400
+            else:
+              do:
+                - actionId: github_pr_reject
+                  params: 
+                    person: lucca
+                    message: "Oh no, it looks like your code is failing some tests."
         github_pr_workflow_complete_failure:
           do:
             - actionId: bot_message
