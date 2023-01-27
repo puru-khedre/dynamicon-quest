@@ -37,6 +37,7 @@ trigger:
                     delay: 2000
         github_pr_workflow_complete_success:
           do:
+            - actionId: github_pr_approve
             - actionId: github_pr_comment
               params:
                 person: lucca
