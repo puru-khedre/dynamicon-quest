@@ -18,38 +18,23 @@ const user = {
 //   }
 // };
 
-// async function signUpUser() {
-describe("Check that the profile page is rendered correctly", () => {
-  let browser, page;
-
-  beforeAll(async () => {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
+async function signUpUser() {
+  const browser = await puppeteer.launch({
+    headless: false,
   });
 
-  afterAll(async () => {
-    await page.close();
-    await browser.close();
+  const page = await browser.newPage();
+
+  await page.type("input[placeholder=Username]", user.username);
+  await page.type("input[placeholder=Password]", user.password);
+  await page.type("input[placeholder=Email]", user.email);
+
+  await page.evaluate(() => {
+    document.querySelector("input[type=submit]").click();
   });
+}
 
-  it("Load registration page", async () => {
-    await page.goto(`http://localhost:3001/register`, {
-      waitUntil: "load",
-      timeout: 60000,
-    });
-  }, 60000);
-
-  it("fill user details in form", async () => {
-    await page.type("input[placeholder=Username]", user.username);
-    await page.type("input[placeholder=Password]", user.password);
-    await page.type("input[placeholder=Email]", user.email);
-
-    await page.evaluate(() => {
-      document.querySelector("input[type=submit]").click();
-    });
-  }, 15000);
-});
-// }
+signUpUser();
 
 // signUpUser()
 //   .then(async () => {
