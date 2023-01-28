@@ -8,30 +8,66 @@ startFlow:
       params:
         person: lucca
         messages: 
-          - text: "Next, we'll call this utility function that you build earliar when a new user signs up on the website."
-            delay: 2600
-          - text: "When the user submits the form, take this information and call our getUserAvatar method to get the image URL."
-            delay: 2500
-          - text: "Now, add this image in post request payload"
-            delay: 1100
-          - text: "Are you ready?"
-            delay: 100
+          - text: "Now, change the sign up POST request handler method, so that can able to save image url in database"
+            delay: 1500
+          - text: "When user hits sign up API, get data URL of image using utility function"
+            delay: 1300
+          - text: "Store this dataURL in the database"
+            delay: 700
+          - text: "If you done this tasks, Open a PR with the changes"
+            delay: 900
+
+githubActions:
+  backend:
+    capabilities:
+    - axios
+    - dotenv
+    testFile: "image_url.test.js"
+
 trigger:
-  type: user_message
-  params:
-    person: lucca
+  type: github_pr_lifecycle_status
   flowNode:
-    if:
-      conditions:
-        - conditionId: is_user_message_text_ready_to_continue
-      then:
-        do:
-          - actionId: finish_step
-      else:
-        do:
-          - actionId: bot_message
-            params:
-              person: lucca
-              messages:
-                - text: "I don't understand what you are saying."
-                  delay: 400
+    switch:
+      key: "${eventType}"
+      cases:
+        github_pr_opened:
+          do:
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+                    delay: 2000
+        github_pr_workflow_complete_success:
+          do:
+            - actionId: github_pr_approve
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Great job! Your can merge PR"
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Great job! Your can merge PR"
+                    delay: 400
+            - actionId: github_pr_reject
+              params: 
+                person: lucca
+                message: "Oh no, it looks like your code is failing some tests."
+        github_pr_workflow_complete_failure:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Oh no, it looks like your code is failing some tests."
+                    delay: 1200
+        github_pr_merged:
+          do:
+            - actionId: finish_step
+            

@@ -8,11 +8,10 @@ steps:
 - create_utils_dir_dynamicon_smith
 - create_utility_function_dynamicon_smith
 - send_url_with_post_request_dynamicon_smith
-- save_payload_in_db_dynamicon_smith
 duration: 1.0
 skills:
-- frontend
 - backend
+- database
 - communication
 questDependency: docker_localsetup
 slogan: Elevating user identity through dynamic avatars

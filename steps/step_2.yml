@@ -8,12 +8,12 @@ startFlow:
       params:
         person: lucca
         messages:
-          - text: "Make a utils directory inside frontend/src/, and then make a file that exports required functions inside the utils directory so that it can be imported and used."
-            delay: 3000
-          - text: "Make sure the name of the file is getUserAvatar.js."
-            delay: 800
-          - text: "Remember that the function should return base64 data URL. When you're done with that, open a PR."
+          - text: "Make a utils directory inside backend/, and then make a file that exports required functions inside the utils directory so that it can be imported and used."
             delay: 2500
+          - text: "Make sure the name of the file is getUserAvatar.js."
+            delay: 1000
+          - text: "Remember that the function should return base64 data URL of a randomly generated canvas based on the user's info. When you're done with that, open a PR."
+            delay: 2300
 
 trigger:
   type: github_pr_lifecycle_status
@@ -38,7 +38,7 @@ trigger:
             conditions:
             - conditionId: github_is_file_added
               params:
-                fileName: frontend/src/utils/getUserAvatar.js
+                fileName: backend/utils/getUserAvatar.js
             then:
               do:
                 - actionId: github_pr_approve

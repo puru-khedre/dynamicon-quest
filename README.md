@@ -6,7 +6,7 @@
 
 #### level: beginner
 
-#### skills: frontend, backend, communication
+#### skills: database, backend, communication
 
 #### dependencies: docker_localsetup
 
