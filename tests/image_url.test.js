@@ -1,6 +1,14 @@
 require("dotenv").config();
 const axios = require("axios");
 
+const user = {
+  user: {
+    username: "puru",
+    email: "puru@khedre.work",
+    password: "khedre1234",
+  },
+};
+
 const testItem = async () => {
   const client = axios.create({
     baseURL: `http://localhost:${process.env.PORT || 3000}`,
