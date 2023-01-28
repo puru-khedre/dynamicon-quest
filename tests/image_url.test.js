@@ -33,7 +33,7 @@ describe("Check that the profile page is rendered correctly", () => {
   });
 
   it("Load registration page", async () => {
-    await page.goto(`http://localhost:${process.env.PORT || 3000}/register`, {
+    await page.goto(`http://localhost:3001/register`, {
       waitUntil: "load",
       timeout: 60000,
     });
