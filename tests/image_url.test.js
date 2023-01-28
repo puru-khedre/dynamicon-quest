@@ -19,34 +19,36 @@ const getRes = async (client) => {
 };
 
 async function signUpUser() {
-  let browser, page;
+  describe("Check that the profile page is rendered correctly", () => {
+    let browser, page;
 
-  beforeAll(async () => {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
-  });
-
-  afterAll(async () => {
-    await page.close();
-    await browser.close();
-  });
-
-  it("Load registration page", async () => {
-    await page.goto(`http://localhost:${process.env.PORT || 3000}/register`, {
-      waitUntil: "load",
-      timeout: 60000,
+    beforeAll(async () => {
+      browser = await puppeteer.launch();
+      page = await browser.newPage();
     });
-  }, 60000);
 
-  it("fill user details in form", async () => {
-    await page.type("input[placeholder=Username]", user.username);
-    await page.type("input[placeholder=Password]", user.password);
-    await page.type("input[placeholder=Email]", user.email);
-
-    await page.evaluate(() => {
-      document.querySelector("input[type=submit]").click();
+    afterAll(async () => {
+      await page.close();
+      await browser.close();
     });
-  }, 15000);
+
+    it("Load registration page", async () => {
+      await page.goto(`http://localhost:${process.env.PORT || 3000}/register`, {
+        waitUntil: "load",
+        timeout: 60000,
+      });
+    }, 60000);
+
+    it("fill user details in form", async () => {
+      await page.type("input[placeholder=Username]", user.username);
+      await page.type("input[placeholder=Password]", user.password);
+      await page.type("input[placeholder=Email]", user.email);
+
+      await page.evaluate(() => {
+        document.querySelector("input[type=submit]").click();
+      });
+    }, 15000);
+  });
 }
 
 signUpUser()
