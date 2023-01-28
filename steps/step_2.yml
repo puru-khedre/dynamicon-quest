@@ -1,9 +1,7 @@
 id: create_utility_function_dynamicon_smith
 learningObjectives:
-  - Creating and using utility functions
-  - use of Javascript's canvas API, and converting canvas into data URL
+  - Creating utility functions which generate data URL, and converting canvas into data URL
 hints:
-  - Try to find what all the users that drop in the funnel have in common
 startFlow:
   do:
     - actionId: bot_message
