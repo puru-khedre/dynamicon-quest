@@ -15,7 +15,7 @@ startFlow:
             delay: 1000
 
 githubActions:
-  frontend:
+  backend:
     capabilities:
     - jest-puppeteer
     - puppeteer
