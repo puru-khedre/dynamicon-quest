@@ -1,0 +1,73 @@
+id: save_payload_in_db_dynamicon_smith
+learningObjectives:
+hints:
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages: 
+          - text: "Change signup post request handler function."
+            delay: 1000
+          - text: "This handler function should also save image url to database"
+            delay: 1000
+          - text: "If you done this tasks, Open a PR with the changes"
+            delay: 1000
+
+githubActions:
+  backend:
+    capabilities:
+    - jest-puppeteer
+    - puppeteer
+    - axios
+    - dotenv
+    testFile: "image_url.test.js"
+
+
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    switch:
+      key: "${eventType}"
+      cases:
+        github_pr_opened:
+          do:
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Looks like you're ready to show off your hard work! Let's see what magic you've done."
+                    delay: 2000
+        github_pr_workflow_complete_success:
+          do:
+            - actionId: github_pr_approve
+            - actionId: github_pr_comment
+              params:
+                person: lucca
+                message: "Great job! Your can merge PR"
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Great job! Your can merge PR"
+                    delay: 400
+            - actionId: github_pr_reject
+              params: 
+                person: lucca
+                message: "Oh no, it looks like your code is failing some tests."
+        github_pr_workflow_complete_failure:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: "Oh no, it looks like your code is failing some tests."
+                    delay: 1200
+        github_pr_merged:
+          do:
+            - actionId: finish_step
+            

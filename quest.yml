@@ -7,8 +7,8 @@ steps:
 - intro_dynamicon_smith
 - create_utils_dir_dynamicon_smith
 - create_utility_function_dynamicon_smith
-- funneldrop_reproduce_locally
-- funneldrop_fixing_bug_pr
+- send_url_with_post_request_dynamicon_smith
+- save_payload_in_db_dynamicon_smith
 duration: 1.0
 skills:
 - frontend
