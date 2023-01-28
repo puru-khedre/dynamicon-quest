@@ -21,6 +21,7 @@ const user = {
 async function signUpUser() {
   const browser = await puppeteer.launch({
     headless: false,
+    args: ["--no-sandbox", "--disabled-setupid-sandbox"],
   });
 
   const page = await browser.newPage();
