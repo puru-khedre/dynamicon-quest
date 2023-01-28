@@ -1,20 +1,21 @@
-id: send_url_with_post_request_dynamicon_smith
+id: send_set_user_avatar_in_db_dynamicon_smith
 learningObjectives:
-  - send payload to backend using HTTP post request.
+  - storing image url in database.
 hints:
+  - The sign up post request handler lies in :instruction[backend/routes/api/users.js] 
 startFlow:
   do:
     - actionId: bot_message
       params:
         person: lucca
         messages: 
-          - text: "Now, change the sign up POST request handler method, so that can able to save image url in database"
+          - text: "Now, :instruction[change the sign up POST request handler method], so that can able to save image url in database"
             delay: 1500
           - text: "When user hits sign up API, get data URL of image using utility function"
             delay: 1300
-          - text: "Store this dataURL in the database"
+          - text: ":instruction[Store this dataURL in the database]"
             delay: 700
-          - text: "If you done this tasks, Open a PR with the changes"
+          - text: "If you done this tasks, :instruction[open a PR] with the changes"
             delay: 900
 
 githubActions:
@@ -61,7 +62,7 @@ trigger:
               params: 
                 person: lucca
                 message: "Oh no, it looks like your code is failing some tests."
-                
+
             - actionId: bot_message
               params:
                 person: lucca

@@ -1,14 +1,14 @@
 id: dynamIcon_smith
 title: DynamIcon Smith
 description: "Join the DynamIcon Smith's adventure! As a new member of Anythink team, you will develop an innovative feature that will shake up the e-commerce industry. \n\nYour mission, is to create a dynamic avatar for new sign-ups. This avatar will be generated based on the user and will be as unique as the user themselves. \n\nBut beware, this quest won't be easy. But fear not, With the help of a trusty guide, you'll be able to conquer this challenge in no time."
-summary: "Congratulations on completing the DynamIcon Smith quest! You've successfully added a unique feature to the Anythink website, where new users can now have their own avatar generated and saved in the database. You've learned how to create and use utility functions, make dynamic changes to a canvas, and send data from the front-end to the back-end. Keep up the good work and get ready for more challenges ahead!"
-level: intermediate
+summary: "Congratulations on completing the DynamIcon Smith quest! You've successfully added a unique feature to the Anythink website, where new users can now have their own avatar generated and saved in the database. You've learned how to create and use utility functions, make dynamic changes to a canvas. Keep up the good work and get ready for more challenges ahead!"
+level: beginner
 steps:
 - intro_dynamicon_smith
 - create_utils_dir_dynamicon_smith
 - create_utility_function_dynamicon_smith
-- send_url_with_post_request_dynamicon_smith
-duration: 1.0
+- send_set_user_avatar_in_db_dynamicon_smith
+duration: 0.75
 skills:
 - backend
 - database

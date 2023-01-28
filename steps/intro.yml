@@ -1,5 +1,6 @@
 id: intro_dynamicon_smith
 learningObjectives:
+  - communication
 startFlow:
   do:
     - actionId: bot_message
@@ -32,5 +33,5 @@ trigger:
             params:
               person: lucca
               messages:
-                - text: "let me know when you're ready. By typing ready | done"
+                - text: "let me know when you're ready. By typing :input[clickable this to say ready]{text='ready'} | :input[clickable this to say done]{text='done'}"
                   delay: 200

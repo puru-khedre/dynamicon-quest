@@ -1,7 +1,6 @@
 id: create_utils_dir_dynamicon_smith
 learningObjectives:
-  - Learn about HTML canvas
-hints:
+  - Learn about HTML canvas, manipulate canvas using javascript
 startFlow:
   do:
     - actionId: bot_message
@@ -14,7 +13,6 @@ startFlow:
             delay: 2000
           - text: "When you're ready let me know."
             delay: 700
-
 
 trigger:
   type: user_message
