@@ -2,7 +2,6 @@ id: send_url_with_post_request_dynamicon_smith
 learningObjectives:
   - send payload to backend using HTTP post request.
 hints:
-
 startFlow:
   do:
     - actionId: bot_message
@@ -17,10 +16,10 @@ startFlow:
             delay: 1100
           - text: "Are you ready?"
             delay: 100
-
-
 trigger:
   type: user_message
+  params:
+    person: lucca
   flowNode:
     if:
       conditions:
