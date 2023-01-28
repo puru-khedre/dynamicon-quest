@@ -55,12 +55,13 @@ trigger:
                 messages:
                   - text: "Great job! Your can merge PR"
                     delay: 400
+        github_pr_workflow_complete_failure:
+          do:
             - actionId: github_pr_reject
               params: 
                 person: lucca
                 message: "Oh no, it looks like your code is failing some tests."
-        github_pr_workflow_complete_failure:
-          do:
+                
             - actionId: bot_message
               params:
                 person: lucca
