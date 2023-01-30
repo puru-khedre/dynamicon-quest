@@ -59,6 +59,7 @@ Before submitting your quest for review, test your quest in snack and check the 
   - you can create image by using canvas
   - "you can user this [canvas](https://yarnpkg.com/package/canvas) liabrary, this includes a canvas implementation for **Node.js**"
 
+
 #### Step 3 [create_utility_function_dynamicon_smith]:
 
 - Learning Objective: storing image url in database.
