@@ -3,7 +3,7 @@ learningObjectives:
   - Creating utility functions which generate data URL, and converting canvas into data URL
 hints:
   - "you can create image by using canvas"
-  - "you can use this [canvas](https://yarnpkg.com/package/canvas)liabrary, this package includes a html canvas implementation for **Node.js**"
+  - "you can use this [canvas](https://yarnpkg.com/package/canvas) library, this package includes a html canvas implementation for **Node.js**"
 startFlow:
   do:
     - actionId: bot_message
