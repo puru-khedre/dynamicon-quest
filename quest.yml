@@ -15,3 +15,8 @@ skills:
 - communication
 questDependency: docker_localsetup
 slogan: Elevating user identity through dynamic avatars
+frameworks:
+  backend:
+    - node
+  frontend:
+    - react
