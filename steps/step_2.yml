@@ -2,14 +2,16 @@ id: create_utility_function_dynamicon_smith
 learningObjectives:
   - Creating utility functions which generate data URL, and converting canvas into data URL
 hints:
-  - you can create image by using canvas
-  - "you can user this [canvas](https://yarnpkg.com/package/canvas)liabrary, this includes a canvas implementation for **Node.js**"
+  - "you can create image by using canvas"
+  - "you can use this [canvas](https://yarnpkg.com/package/canvas)liabrary, this package includes a html canvas implementation for **Node.js**"
 startFlow:
   do:
     - actionId: bot_message
       params:
         person: lucca
         messages:
+          - text: ":instruction[Install canvas package in backend]."
+            delay: 500
           - text: ":instruction[Make a utils folder inside `backend/`], and then make a file that exports required functions inside the utils directory so that it can be imported and used."
             delay: 2500
           - text: ":instruction[Make sure the name of the file is **getUserAvatar.js**.]{block=true}"
@@ -63,7 +65,15 @@ trigger:
                 - actionId: github_pr_reject
                   params: 
                     person: lucca
-                    message: "Oh no, it looks like your code is failing some tests."
+                    message: "Looks like you haven't created **getUserAvatar.js** file properly, or haven't install **canvas**."
+                - actionId: bot_message
+                  params: 
+                    person: lucca
+                    messages: 
+                      - text: "Looks like you haven't created **getUserAvatar.js** file properly, or haven't install **canvas**."
+                        delay: 1000
+                      - text: "install canvas and create getUserAvatar.js
+                        delay: 400
         github_pr_workflow_complete_failure:
           do:
             - actionId: bot_message
