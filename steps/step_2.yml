@@ -2,8 +2,7 @@ id: create_utility_function_dynamicon_smith
 learningObjectives:
   - Creating utility functions which generate data URL, and converting canvas into data URL
 hints:
-  - "you can create image by using canvas"
-  - "you can use this [canvas](https://yarnpkg.com/package/canvas) library, this package includes a html canvas implementation for **Node.js**"
+  - "you can create image by using canvas, this package includes a html canvas implementation for **Node.js**"
   - "create canvas element using **createCanvas()** method from canvas package."
   - "you can use **Canvas#toDataURL()** to get the data url for canvas."
 startFlow:
@@ -12,7 +11,7 @@ startFlow:
       params:
         person: lucca
         messages:
-          - text: ":instruction[Install canvas package in backend]."
+          - text: "So let's start by installing the [canvas](https://yarnpkg.com/package/canvas) package"
             delay: 500
           - text: ":instruction[Make a utils folder inside `backend/`], and then make a file that exports required functions inside the utils directory so that it can be imported and used."
             delay: 2500
