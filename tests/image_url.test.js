@@ -18,12 +18,12 @@ const testItem = async () => {
   const userRes = await client.post(`/api/users`, user);
 
   if (!userRes.data.user) {
-    console.log(`=!=!=!=!= ERROR: No user will found`);
+    console.log(`=!=!=!=!= ERROR: No user found`);
     process.exit(1);
   }
 
   if (!userRes.data.user?.image) {
-    console.log(`=!=!=!=!= ERROR: No image will found`);
+    console.log(`=!=!=!=!= ERROR: No image url found`);
     process.exit(1);
   }
 
