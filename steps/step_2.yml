@@ -4,6 +4,8 @@ learningObjectives:
 hints:
   - "you can create image by using canvas"
   - "you can use this [canvas](https://yarnpkg.com/package/canvas) library, this package includes a html canvas implementation for **Node.js**"
+  - "create canvas element using **createCanvas()** method from canvas package."
+  - "you can use **Canvas#toDataURL()** to get the data url for canvas."
 startFlow:
   do:
     - actionId: bot_message
