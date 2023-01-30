@@ -9,6 +9,8 @@ startFlow:
         messages:
           - text: "First things first, let's create a utility function that takes in the user's information and generates a dataURL of the image."
             delay: 2500
+          - text: "you can use first two characters of user's username"
+            delay: 1300
           - text: "To create an image, we use canvas. You can read more about [canvas here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)."
             delay: 2000
           - text: "When you're ready let me know."
